@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Player</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="dark">
+    <div id="app">
+      <div class="sidebar">
+        <h2>File Explorer</h2>
+        <div class="folder-list-container">
+          <div id="file-explorer"></div>
+        </div>
+        <input
+          type="file"
+          id="file-input"
+          webkitdirectory
+          directory
+          multiple
+          style="display: none"
+        />
+        <button id="select-folder">Select Folder</button>
+      </div>
+      <div class="main">
+        <div
+          id="video-player-container"
+          style="max-width: 1200px; min-width: 500px"
+        >
+          <video
+            id="video-player"
+            controls
+            style="width: 100%; max-width: 1160px; min-height: 600px"
+          ></video>
+          <div id="video-title"></div>
+          <div id="custom-controls"></div>
+        </div>
+        <div
+          id="pdf-preview-container"
+          style="
+            display: none;
+            width: 100%;
+            max-width: 1200px;
+            min-width: 500px;
+            background: #23272f;
+            border-radius: 22px;
+            box-shadow: 0 2px 24px rgba(0, 0, 0, 0.22);
+            padding: 36px 32px 22px 32px;
+            margin-bottom: 28px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          "
+        >
+          <iframe
+            id="pdf-preview"
+            style="
+              width: 100%;
+              height: 600px;
+              border-radius: 12px;
+              background: #fff;
+              box-shadow: 0 1px 12px rgba(0, 0, 0, 0.22);
+              margin-bottom: 12px;
+            "
+            frameborder="0"
+          ></iframe>
+          <div
+            id="pdf-title"
+            style="
+              font-size: 1.2rem;
+              color: #84cc16;
+              margin-bottom: 10px;
+              text-align: center;
+            "
+          ></div>
+        </div>
+        <div id="completed-files"></div>
+      </div>
+    </div>
+    <script src="utils.js"></script>
+    <script src="main.js"></script>
+    <script src="video-player.js"></script>
+  </body>
+</html>
